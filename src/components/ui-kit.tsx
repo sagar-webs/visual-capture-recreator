@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import * as Icons from "lucide-react";
+import { Briefcase, Building2, GraduationCap, Network, Plane, ShoppingBag, Sparkles, Stethoscope, Users, type LucideIcon } from "lucide-react";
+
+const ICONS: Record<string, LucideIcon> = { Briefcase, Building2, GraduationCap, Network, Plane, ShoppingBag, Stethoscope, Users };
 import { cn } from "@/lib/utils";
 
 export function Reveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
@@ -38,7 +40,7 @@ export function SectionHead({ eyebrow, title, text, center }: { eyebrow?: string
 }
 
 export function Icon({ name, className }: { name: string; className?: string }) {
-  const C = (Icons as unknown as Record<string, Icons.LucideIcon>)[name] ?? Icons.Sparkles;
+  const C = ICONS[name] ?? Sparkles;
   return <C className={className} aria-hidden />;
 }
 
