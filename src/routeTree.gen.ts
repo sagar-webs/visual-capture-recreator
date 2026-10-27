@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsVelynoraRouteImport } from './routes/products.velynora'
+import { Route as ProductsVelynoraLiteRouteImport } from './routes/products.velynora-lite'
+import { Route as ProductsVocalisRouteImport } from './routes/products.vocalis'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsVelynoraRoute = ProductsVelynoraRouteImport.update({
+  id: '/products/velynora',
+  path: '/products/velynora',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsVelynoraLiteRoute = ProductsVelynoraLiteRouteImport.update({
+  id: '/products/velynora-lite',
+  path: '/products/velynora-lite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsVocalisRoute = ProductsVocalisRouteImport.update({
+  id: '/products/vocalis',
+  path: '/products/vocalis',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
+  '/terms': typeof TermsRoute
+  '/products/velynora': typeof ProductsVelynoraRoute
+  '/products/velynora-lite': typeof ProductsVelynoraLiteRoute
+  '/products/vocalis': typeof ProductsVocalisRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
+  '/terms': typeof TermsRoute
+  '/products/velynora': typeof ProductsVelynoraRoute
+  '/products/velynora-lite': typeof ProductsVelynoraLiteRoute
+  '/products/vocalis': typeof ProductsVocalisRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
+  '/terms': typeof TermsRoute
+  '/products/velynora': typeof ProductsVelynoraRoute
+  '/products/velynora-lite': typeof ProductsVelynoraLiteRoute
+  '/products/vocalis': typeof ProductsVocalisRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy'
+    | '/services'
+    | '/terms'
+    | '/products/velynora'
+    | '/products/velynora-lite'
+    | '/products/vocalis'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy'
+    | '/services'
+    | '/terms'
+    | '/products/velynora'
+    | '/products/velynora-lite'
+    | '/products/vocalis'
+    | '/products'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/privacy'
+    | '/services'
+    | '/terms'
+    | '/products/velynora'
+    | '/products/velynora-lite'
+    | '/products/vocalis'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ServicesRoute: typeof ServicesRoute
+  TermsRoute: typeof TermsRoute
+  ProductsVelynoraRoute: typeof ProductsVelynoraRoute
+  ProductsVelynoraLiteRoute: typeof ProductsVelynoraLiteRoute
+  ProductsVocalisRoute: typeof ProductsVocalisRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/velynora': {
+      id: '/products/velynora'
+      path: '/products/velynora'
+      fullPath: '/products/velynora'
+      preLoaderRoute: typeof ProductsVelynoraRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/velynora-lite': {
+      id: '/products/velynora-lite'
+      path: '/products/velynora-lite'
+      fullPath: '/products/velynora-lite'
+      preLoaderRoute: typeof ProductsVelynoraLiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/vocalis': {
+      id: '/products/vocalis'
+      path: '/products/vocalis'
+      fullPath: '/products/vocalis'
+      preLoaderRoute: typeof ProductsVocalisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  PrivacyRoute: PrivacyRoute,
+  ServicesRoute: ServicesRoute,
+  TermsRoute: TermsRoute,
+  ProductsVelynoraRoute: ProductsVelynoraRoute,
+  ProductsVelynoraLiteRoute: ProductsVelynoraLiteRoute,
+  ProductsVocalisRoute: ProductsVocalisRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
