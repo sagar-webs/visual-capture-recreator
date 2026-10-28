@@ -14,7 +14,7 @@ export function Logo() {
         <span className="font-display text-sm font-bold">T</span>
         <span className="absolute -right-0.5 -top-0.5 size-2 rounded-full bg-brand" />
       </span>
-      Tech<span className="text-primary">Thrust</span>
+      <span>Tech<span className="text-primary">Thrust</span></span>
     </Link>
   );
 }

@@ -12,7 +12,7 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
     if (!el) return;
     const io = new IntersectionObserver(
       ([e]) => {
-        if (e.isIntersecting) {
+        if (e?.isIntersecting) {
           setV(true);
           io.disconnect();
         }
@@ -29,7 +29,7 @@ export function Reveal({ children, className, delay = 0 }: { children: ReactNode
   );
 }
 
-export function SectionHead({ eyebrow, title, text, center }: { eyebrow?: string; title: string; text?: string; center?: boolean }) {
+export function SectionHead({ eyebrow, title, text, center }: { eyebrow?: string | undefined; title: string; text?: string | undefined; center?: boolean }) {
   return (
     <div className={cn("max-w-3xl", center && "mx-auto text-center")}>
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
