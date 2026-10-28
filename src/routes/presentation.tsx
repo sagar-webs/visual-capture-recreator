@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useDemo } from "@/components/demo";
-import { DIFFERENTIATORS, FRAMEWORK, PRODUCTS, SERVICES, SITE } from "@/lib/site";
+import { FRAMEWORK, PRODUCTS, SERVICES, SITE } from "@/lib/site";
 import { seo } from "@/lib/seo";
 
 export const Route = createFileRoute("/presentation")({
@@ -46,7 +46,7 @@ function Presentation() {
     <S eyebrow="Velynora" title="Turn customer conversations into business action."><List items={["Sales conversion & lead qualification", "Outbound campaigns", "Lead nurture & appointments", "Customer support", "Feedback & NPS", "Reception & booking"]} /></S>,
     <S eyebrow="Velynora Lite" title="The right message. The right time. At scale."><List items={["Automated voice calls", "WhatsApp or email follow-ups", "Appointment & event reminders", "Announcements & notifications", "Self-service or managed campaigns"]} /></S>,
     <S eyebrow="Vocalis" title="Your website. Now it talks, thinks & acts."><List items={["Voice and text interaction", "Voice-directed navigation", "Discovery & recommendations", "Appointment booking & human handoff", "Shopify & WooCommerce", "80+ languages"]} /></S>,
-    <S eyebrow="Services & applications" title="Technology that moves business forward."><List items={[...SERVICES.map((s) => s.name), ...DIFFERENTIATORS.slice(0, 0).map((d) => d.title)]} /></S>,
+    <S eyebrow="Services & applications" title="Technology that moves business forward."><List items={[...SERVICES.map((s) => s.name)]} /></S>,
     <S eyebrow="Next step" title="Let's Build What's Next.">
       <p>Tell us what you're trying to achieve. We'll discuss the right approach for your business.</p>
       <div className="mt-6 flex flex-wrap gap-3">
