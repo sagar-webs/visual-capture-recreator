@@ -4,7 +4,7 @@
  */
 type GtagWindow = Window & { dataLayer?: unknown[]; gtag?: (...args: unknown[]) => void };
 
-export const GA_ID = (import.meta.env.VITE_GA4_MEASUREMENT_ID as string | undefined) || "";
+export const GA_ID = (import.meta.env["VITE_GA4_MEASUREMENT_ID"] as string | undefined) || "";
 export const CONSENT_KEY = "tt-analytics-consent";
 
 let loaded = false;

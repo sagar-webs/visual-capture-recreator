@@ -84,7 +84,7 @@ function Services() {
       {DATA.map((s, idx) => (
         <section key={s.id} id={s.id} className={`scroll-mt-32 py-24 ${idx % 2 ? "border-y border-border bg-surface" : ""}`}>
           <div className="container-site">
-            <p className="eyebrow">0{idx + 1} · {SERVICES[idx].name}</p>
+            <p className="eyebrow">0{idx + 1} · {SERVICES[idx]?.name}</p>
             <h2 className="mt-3 max-w-4xl text-balance text-3xl font-semibold md:text-5xl">{s.headline}</h2>
             <p className="mt-5 max-w-3xl text-lg text-muted-foreground">{s.desc}</p>
             <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">

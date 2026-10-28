@@ -54,8 +54,8 @@ type Lead = {
   phone: string;
   company: string;
   product: string;
-  message?: string;
-  sourcePage?: string;
+  message?: string | undefined;
+  sourcePage?: string | undefined;
   submittedAt: string;
 };
 

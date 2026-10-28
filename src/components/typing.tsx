@@ -4,23 +4,23 @@ const PHRASES = ["Grow with AI.", "Automate the Ordinary.", "Turn Conversations 
 const LONGEST = PHRASES.reduce((a, b) => (b.length > a.length ? b : a));
 
 export function TypingLine() {
-  const [text, setText] = useState(PHRASES[0]);
+  const [text, setText] = useState<string>(PHRASES[0]!);
   const [reduced, setReduced] = useState(true);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduced(mq.matches);
     if (mq.matches) return;
-    let i = 0, n = PHRASES[0].length, deleting = true, t: ReturnType<typeof setTimeout>;
+    let i = 0, n = PHRASES[0]!.length, deleting = true, t: ReturnType<typeof setTimeout>;
     const step = () => {
-      const p = PHRASES[i];
+      const p = PHRASES[i]!;
       if (deleting) {
         n--;
         setText(p.slice(0, n));
         if (n === 0) { deleting = false; i = (i + 1) % PHRASES.length; t = setTimeout(step, 350); return; }
         t = setTimeout(step, 32);
       } else {
-        const q = PHRASES[i];
+        const q = PHRASES[i]!;
         n++;
         setText(q.slice(0, n));
         if (n === q.length) { deleting = true; t = setTimeout(step, 1300); return; }

@@ -1,4 +1,4 @@
-const SITE_URL = (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, "") || "";
+const SITE_URL = (import.meta.env["VITE_SITE_URL"] as string | undefined)?.replace(/\/$/, "") || "";
 
 export function seo({ title, description, path }: { title: string; description: string; path: string }) {
   const meta = [

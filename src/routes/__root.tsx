@@ -68,8 +68,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "TechThrust Digital Solutions FZC" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      ...(import.meta.env.VITE_GSC_VERIFICATION
-        ? [{ name: "google-site-verification", content: import.meta.env.VITE_GSC_VERIFICATION as string }]
+      ...(import.meta.env["VITE_GSC_VERIFICATION"]
+        ? [{ name: "google-site-verification", content: import.meta.env["VITE_GSC_VERIFICATION"] as string }]
         : []),
     ],
     links: [
